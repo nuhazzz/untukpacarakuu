@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Bubbb!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animasi untuk teks utama */
+        .message, .birthday-message {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards, bounce 1s infinite;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #ff6347;
+            animation-delay: 1s;
+        }
+
+        .birthday-message {
+            font-size: 40px;
+            color: #ff1493;
+            animation-delay: 2s;
+        }
+
+        /* Animasi untuk gambar Keysha */
+        .image {
+            margin-top: 30px;
+            border-radius: 50%;
+            max-width: 60%;
+            height: auto;
+            animation: zoomIn 3s ease-out forwards, waveMotion 5s infinite ease-in-out;
+        }
+
+        /* Efek background bergerak */
+        @keyframes moveBackground {
+            0% { background-color: #ffebcd; }
+            50% { background-color: #f0f8ff; }
+            100% { background-color: #ffebcd; }
+        }
+
+        /* Animasi fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Animasi bounce untuk teks */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Animasi zoom-in untuk gambar */
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* Gerakan gelombang pada gambar */
+        @keyframes waveMotion {
+            0% { transform: translateX(0px); }
+            50% { transform: translateX(15px); }
+            100% { transform: translateX(0px); }
+        }
+
+        /* Animasi confetti */
+        @keyframes confettiFall {
+            0% { top: -10%; }
+            100% { top: 100%; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6347;
+            animation: confettiFall 2s infinite ease-in-out;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #ff1493;
+        }
+
+        /* Animasi bunga */
+        @keyframes flowerFall {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+                top: -10%;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+                top: 100%;
+            }
+        }
+
+        .flower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('flower.png') no-repeat center center;
+            background-size: cover;
+            animation: flowerFall 4s infinite ease-in-out, flowerMovement 5s infinite;
+        }
+
+        /* Gerakan bunga bergoyang */
+        @keyframes flowerMovement {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Animasi tombol */
+        .button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff1493;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ff6347;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Menambahkan animasi confetti yang lebih banyak */
+        .confetti1 { left: 10%; animation-delay: 0s; }
+        .confetti2 { left: 20%; animation-delay: 1s; }
+        .confetti3 { left: 30%; animation-delay: 2s; }
+        .confetti4 { left: 40%; animation-delay: 3s; }
+        .confetti5 { left: 50%; animation-delay: 4s; }
+        .confetti6 { left: 60%; animation-delay: 5s; }
+        .confetti7 { left: 70%; animation-delay: 6s; }
+        .confetti8 { left: 80%; animation-delay: 7s; }
+
+    </style>
+</head>
+<body>
+
+    <h1 class="message"> Hepibesdey tayangg🥳🥳</h1>
+    <img class="image" src="pacarajo.jpeg" alt="Keysha" />
+    <p class="message">anjiss ada yang makin tua nich, anjir udah 17 aja kamu bub, aku harap semoga keysha jadi anak solehah, patuh sama orang tua, sukses dunia akhirat dan kesa sama aku (bilal) selamanyaa 😚😆. sayang kamu bnyk bnyk key😘🫶🫰❤️🎉</p>
+    
+    <p class="birthday-message">Happy Birthday Keysha!</p>
+    
+    <button class="button" onclick="showAnotherMessage()">Klik untuk Ucapan Lain</button>
+
+    <!-- Partikel Confetti -->
+    <div class="confetti confetti1"></div>
+    <div class="confetti confetti2"></div>
+    <div class="confetti confetti3"></div>
+    <div class="confetti confetti4"></div>
+    <div class="confetti confetti5"></div>
+    <div class="confetti confetti6"></div>
+    <div class="confetti confetti7"></div>
+    <div class="confetti confetti8"></div>
+
+    <!-- Bunga yang Berterbangan -->
+    <div class="flower" style="left: 5%;"></div>
+    <div class="flower" style="left: 15%; animation-delay: 1s;"></div>
+    <div class="flower" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="flower" style="left: 35%; animation-delay: 3s;"></div>
+    <div class="flower" style="left: 45%; animation-delay: 4s;"></div>
+    <div class="flower" style="left: 55%; animation-delay: 5s;"></div>
+    <div class="flower" style="left: 65%; animation-delay: 6s;"></div>
+    <div class="flower" style="left: 75%; animation-delay: 7s;"></div>
+
+    <script>
+        // Fungsi untuk menampilkan ucapan ulang tahun pada tanggal 2 Desember
+        const today = new Date();
+        if (today.getMonth() === 11 && today.getDate() === 2) {
+            alert("Selamat Ulang Tahun Keysha!");
+        }
+
+        // Fungsi untuk menampilkan pesan ucapan lain
+        function showAnotherMessage() {
+            alert("Semoga setiap langkah hidupmu selalu penuh kebahagiaan dan sukses, Keysha! ❤️");
+        }
+
+        // Menambahkan musik latar belakang
+        let audio = new Audio('happy_birthday_music.mp3');
+        audio.play();
+    </script>
+
+</body>
+</html>
